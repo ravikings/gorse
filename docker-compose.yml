@@ -4,7 +4,7 @@ services:
     image: redis/redis-stack
     restart: unless-stopped
     ports:
-      - 6379:6379
+      - 6380:6379
 
   mysql:
     image: mysql/mysql-server
@@ -106,3 +106,8 @@ volumes:
   mysql_data:
   # postgres_data:
   # mongo_data:
+
+networks: 
+  default: 
+    external:
+      name: hustle_laravel
